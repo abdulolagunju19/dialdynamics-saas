@@ -59,10 +59,10 @@ import faq from '#data/faq'
 import pricing from '#data/pricing'
 import testimonials from '#data/testimonials'
 
-export const meta: Metadata = {
-  title: 'DialDynamics',
-  description: 'Role-Playing Sales Calls',
-}
+// export const meta: Metadata = {
+//   title: 'DialDynamics',
+//   description: 'Role-Playing Sales Calls',
+// }
 
 const Home: NextPage = () => {
   return (
