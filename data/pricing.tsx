@@ -28,14 +28,14 @@ export default {
         },
       ],
       action: {
-        href: '/signup',
+        href: 'https://calendly.com/abdulsamad-aurrin/30min',
       },
     },
     {
       id: 'bootstrap',
       title: 'Pro',
       description: 'Advanced AI coaching and analytics.',
-      price: '$20/Month',
+      price: '$25/Month',
       isRecommended: true,
       features: [
         {
@@ -46,12 +46,6 @@ export default {
         },
         {
           "title": "Advanced AI Call Analysis"
-        },
-        {
-          "title": "Customizable Call Scenarios"
-        },
-        {
-          "title": "CRM Integration"
         },
         {
           "title": "Private Sales Community Access"
@@ -66,7 +60,7 @@ export default {
         },
       ],
       action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Single%20license',
+        href: 'https://buy.stripe.com/9AQ8zg2LZ8pZgbm144',
       },
     },
     {
@@ -85,6 +79,9 @@ export default {
           "title": "1 year of updates"
         },
         {
+          "title": "Integration with CRM"
+        },
+        {
           "title": "Everything from Pro"
         },
         null,
@@ -94,7 +91,7 @@ export default {
         },
       ],
       action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Unlimited%20license',
+        href: 'https://buy.stripe.com/dR602KeuHay72kw6op',
       },
     },
   ],

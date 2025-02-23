@@ -17,7 +17,7 @@ const faq = {
     },
     {
       q: 'Can I use DialDynamics for team training?',
-      a: "Yes! Our Pro and Elite plans allow teams to practice together, track performance, and improve cold-calling strategies with shared analytics and feedback tools.",
+      a: "Yes! Our Pro and Enterprise plans allow teams to practice together, track performance, and improve cold-calling strategies with shared analytics and feedback tools.",
     },
   ],
 };

@@ -15,10 +15,10 @@ const siteConfig = {
   privacyUrl: '#',
   header: {
     links: [
-      {
-        label: 'Demo',
-        href: 'https://dialdynamics.vercel.app/',
-      },
+      // {
+      //   label: 'Demo',
+      //   href: 'https://dialdynamics.vercel.app/',
+      // },
       {
         id: 'features',
         label: 'Features',
@@ -31,13 +31,18 @@ const siteConfig = {
         id: 'faq',
         label: 'FAQ',
       },
+      // {
+      //   label: 'Login',
+      //   href: '/login',
+      // },
+      // {
+      //   label: 'Sign Up',
+      //   href: '/signup',
+      //   variant: 'primary',
+      // },
       {
-        label: 'Login',
-        href: '/login',
-      },
-      {
-        label: 'Sign Up',
-        href: '/signup',
+        label: 'Book a Demo',
+        href: 'https://calendly.com/abdulsamad-aurrin/30min',
         variant: 'primary',
       },
     ],
@@ -46,7 +51,7 @@ const siteConfig = {
     copyright: (
       <>
         Built by{' '}
-        <Link href="https://www.linkedin.com/company/aurrin/?viewAsMember=true">Aurrin</Link>
+        <Link target='_blank' href="https://www.linkedin.com/company/aurrin/?viewAsMember=true">Aurrin</Link>
       </>
     ),
     links: [
@@ -55,7 +60,7 @@ const siteConfig = {
         label: 'Contact',
       },
       {
-        href: 'https://www.linkedin.com/company/aurrin/?viewAsMember=true',
+        href: 'https://www.linkedin.com/company/dialdynamics/?viewAsMember=true',
         label: <FaLinkedin size="14" />,
       },
     ],

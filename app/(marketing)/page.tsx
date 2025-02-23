@@ -16,8 +16,9 @@ import {
   Wrap,
   useClipboard,
 } from '@chakra-ui/react'
+import Script from 'next/script'
 import { Br, Link } from '@saas-ui/react'
-import type { Metadata, NextPage } from 'next'
+import type { NextPage } from 'next'
 import Image from 'next/image'
 import {
   FiArrowRight,
@@ -59,11 +60,6 @@ import faq from '#data/faq'
 import pricing from '#data/pricing'
 import testimonials from '#data/testimonials'
 
-// export const meta: Metadata = {
-//   title: 'DialDynamics',
-//   description: 'Role-Playing Sales Calls',
-// }
-
 const Home: NextPage = () => {
   return (
     <Box>
@@ -78,6 +74,8 @@ const Home: NextPage = () => {
       <PricingSection />
 
       <FaqSection />
+
+      <ContactUs />
     </Box>
   )
 }
@@ -86,7 +84,7 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
+      <Container maxW="container.xl" pt={{ base: 20, lg: 60 }} pb="40">
         <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
           <Hero
             id="home"
@@ -108,8 +106,8 @@ const HeroSection: React.FC = () => {
           >
             <FallInPlace delay={0.8}>
               <ButtonGroup spacing={4} alignItems="center" pt="2">
-                <ButtonLink colorScheme="primary" size="lg" href="/signup">
-                  Sign Up
+                <ButtonLink colorScheme="primary" size="lg" href="https://calendly.com/abdulsamad-aurrin/30min">
+                  Book a Demo
                 </ButtonLink>
                 <ButtonLink
                   size="lg"
@@ -128,29 +126,31 @@ const HeroSection: React.FC = () => {
                     />
                   }
                 >
-                  View demo
+                  Try it yourself!
                 </ButtonLink>
               </ButtonGroup>
             </FallInPlace>
           </Hero>
+
+          {/* Responsive Image */}
           <Box
-            height="600px"
-            position="absolute"
-            display={{ base: 'none', lg: 'block' }}
+            position={{ base: 'relative', lg: 'absolute' }} // Keeps relative on mobile
+            display={{ base: 'block', lg: 'block' }} // Ensures visibility on mobile
             left={{ lg: '60%', xl: '55%' }}
-            width="80vw"
+            width={{ base: '100%', md: '80%', lg: '80vw' }} // Adjusts width dynamically
             maxW="1100px"
-            margin="0 auto"
+            mx="auto" // Centers image on mobile
+            mt={{ base: 10, lg: 0 }} // Adds spacing for mobile view
           >
             <FallInPlace delay={1}>
-              <Box overflow="hidden" height="100%">
+              <Box overflow="hidden" borderRadius={5}>
                 <Image
-                  src="/static/screenshots/list.png"
-                  width={1200}
+                  src="/static/screenshots/calling.png"
+                  width={1000}
                   height={762}
-                  alt="Screenshot of a ListPage in Saas UI Pro"
-                  quality="75"
+                  alt="Screenshot of a Call"
                   priority
+                  style={{ width: '100%', height: 'auto' }} // Ensures responsiveness
                 />
               </Box>
             </FallInPlace>
@@ -410,5 +410,23 @@ const PricingSection = () => {
 const FaqSection = () => {
   return <Faq {...faq} />
 }
+
+const ContactUs = () => {
+  return (
+    <Flex justify="center" align="center" py={2}>
+      <Box width="100%" maxW="600px">
+        <iframe
+          data-tally-src="https://tally.so/embed/nWj19v?transparentBackground=1&dynamicHeight=1"
+          title="Contact form"
+          width="100%"
+          height="500px"
+          style={{ border: 'none' }}
+        ></iframe>
+
+        <Script id="tally-js" src="https://tally.so/widgets/embed.js" />
+      </Box>
+    </Flex>
+  );
+};
 
 export default Home

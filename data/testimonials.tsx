@@ -5,7 +5,7 @@ export default {
       name: 'Eelco Wiersma',
       description: 'Colliers',
       avatar:
-        'https://pbs.twimg.com/profile_images/1470742164024008706/k-eXHtu0_normal.jpg',
+        '/static/images/eelco.jpg',
       children: (
         <>
           “Before DialDynamics, I dreaded cold calls. Now, I actually enjoy them. The AI coaching helps me refine my pitch, and my close rate has never been better.”

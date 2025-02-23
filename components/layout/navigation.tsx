@@ -2,14 +2,11 @@ import { HStack } from '@chakra-ui/react'
 import { useDisclosure, useUpdateEffect } from '@chakra-ui/react'
 import { useScrollSpy } from 'hooks/use-scrollspy'
 import { usePathname, useRouter } from 'next/navigation'
-
 import * as React from 'react'
-
 import { MobileNavButton } from '#components/mobile-nav'
 import { MobileNavContent } from '#components/mobile-nav'
 import { NavLink } from '#components/nav-link'
 import siteConfig from '#data/config'
-
 import ThemeToggle from './theme-toggle'
 
 const Navigation: React.FC = () => {
@@ -34,6 +31,8 @@ const Navigation: React.FC = () => {
   return (
     <HStack spacing="2" flexShrink={0}>
       {siteConfig.header.links.map(({ href, id, ...props }, i) => {
+        const isExternal = href && href.startsWith('http'); // Check if it's an external link
+
         return (
           <NavLink
             display={['none', null, 'block']}
@@ -45,6 +44,8 @@ const Navigation: React.FC = () => {
                 (href && !!path?.match(new RegExp(href)))
               )
             }
+            target={isExternal ? "_blank" : "_self"} // Open external links in a new tab
+            rel={isExternal ? "noopener noreferrer" : undefined} // Security best practice
             {...props}
           >
             {props.label}
