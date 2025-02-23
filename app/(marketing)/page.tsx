@@ -86,50 +86,67 @@ const HeroSection: React.FC = () => {
       <BackgroundGradient height="100%" zIndex="-1" />
       <Container maxW="container.xl" pt={{ base: 20, lg: 60 }} pb="40">
         <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
-          <Hero
-            id="home"
-            justifyContent="flex-start"
-            px="0"
-            title={
-              <FallInPlace>
+        <Hero
+          id="home"
+          justifyContent="flex-start"
+          px={{ base: 4, md: 0 }} // Adjust horizontal padding if needed
+          title={
+            <FallInPlace>
+              <Heading
+                as="h1"
+                fontSize={{ base: '3xl', md: '5xl' }}
+                textAlign="left" // Always left justified
+              >
                 Level up
                 <Br /> your sales calls
-              </FallInPlace>
-            }
-            description={
-              <FallInPlace delay={0.4} fontWeight="medium">
-                DialDynamics is a <Em>cold-calling platform</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{' '}
-                call smarter and close deals with confidence.
-              </FallInPlace>
-            }
-          >
-            <FallInPlace delay={0.8}>
-              <ButtonGroup spacing={4} alignItems="center" pt="2">
-                <ButtonLink colorScheme="primary" size="lg" href="https://calendly.com/abdulsamad-aurrin/30min">
-                  Book a Demo
-                </ButtonLink>
-                <ButtonLink
-                  size="lg"
-                  href="https://dialdynamics.vercel.app"
-                  variant="outline"
-                  rightIcon={
-                    <Icon
-                      as={FiArrowRight}
-                      sx={{
-                        transitionProperty: 'common',
-                        transitionDuration: 'normal',
-                        '.chakra-button:hover &': {
-                          transform: 'translate(5px)',
-                        },
-                      }}
-                    />
-                  }
-                >
-                  Try it yourself!
-                </ButtonLink>
-              </ButtonGroup>
+              </Heading>
             </FallInPlace>
+          }
+          description={
+            <FallInPlace delay={0.4} fontWeight="medium">
+              <Text fontSize={{ base: 'md', md: 'lg' }} textAlign="left">
+                DialDynamics is a <Em>cold-calling platform</Em>
+                <Br /> that doesn&apos;t get in your way and helps you <Br />
+                call smarter and close deals with confidence.
+              </Text>
+            </FallInPlace>
+          }
+          >
+          <FallInPlace delay={0.8}>
+            <ButtonGroup
+              spacing={4}
+              alignItems="center"
+              pt="2"
+              flexDirection="row" // Ensures buttons are side by side
+            >
+              <ButtonLink
+                colorScheme="primary"
+                size="lg"
+                href="https://calendly.com/abdulsamad-aurrin/30min"
+              >
+                Book a Demo
+              </ButtonLink>
+              <ButtonLink
+                size="lg"
+                href="https://dialdynamics.vercel.app"
+                variant="outline"
+                rightIcon={
+                  <Icon
+                    as={FiArrowRight}
+                    sx={{
+                      transitionProperty: 'common',
+                      transitionDuration: 'normal',
+                      '.chakra-button:hover &': {
+                        transform: 'translate(5px)',
+                      },
+                    }}
+                  />
+                }
+              >
+                Try it yourself!
+              </ButtonLink>
+            </ButtonGroup>
+          </FallInPlace>
           </Hero>
 
           {/* Responsive Image */}
@@ -163,7 +180,7 @@ const HeroSection: React.FC = () => {
         columns={[1, 2, 4]}
         iconSize={4}
         innerWidth="container.xl"
-        pt="20"
+        pt="5"
         features={[
           {
             title: 'Effective',

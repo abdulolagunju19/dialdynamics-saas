@@ -1,6 +1,12 @@
 import { ColorModeScript, theme } from '@chakra-ui/react'
-
+import { Metadata } from 'next';
 import { Provider } from './provider'
+
+export const metadata: Metadata = {
+  title: 'DialDynamics',
+  description:
+    'Improve your cold calling and book more meetings.',
+};
 
 export default function Layout(props: { children: React.ReactNode }) {
   const colorMode = theme.config.initialColorMode
