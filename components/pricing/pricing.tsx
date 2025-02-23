@@ -92,7 +92,7 @@ const PricingFeatures: React.FC<React.PropsWithChildren<{}>> = ({
       align="stretch"
       justifyContent="stretch"
       spacing="4"
-      mb="8"
+      mb="2"
       flex="1"
     >
       {children}
@@ -130,7 +130,7 @@ const PricingBox: React.FC<PricingBoxProps> = (props) => {
       zIndex="2"
       bg="whiteAlpha.600"
       borderRadius="md"
-      p="8"
+      p="4"
       flex="1 0"
       alignItems="stretch"
       border="1px solid"

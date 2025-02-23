@@ -84,18 +84,21 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 20, lg: 60 }} pb="40">
+      <Container maxW="container.xl" pt={{ base: 20, lg: 40 }} pb="40">
         <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
         <Hero
           id="home"
           justifyContent="flex-start"
-          px={{ base: 4, md: 0 }} // Adjust horizontal padding if needed
+          // Add responsive horizontal padding and text alignment
+          px={{ base: 4, md: 0 }}
+          textAlign={{ base: 'center', md: 'left' }}
           title={
             <FallInPlace>
               <Heading
                 as="h1"
-                fontSize={{ base: '3xl', md: '5xl' }}
-                textAlign="left" // Always left justified
+                // Use responsive font sizes for the title
+                fontSize={['2xl', '3xl', '4xl']}
+                lineHeight="short"
               >
                 Level up
                 <Br /> your sales calls
@@ -103,31 +106,31 @@ const HeroSection: React.FC = () => {
             </FallInPlace>
           }
           description={
-            <FallInPlace delay={0.4} fontWeight="medium">
-              <Text fontSize={{ base: 'md', md: 'lg' }} textAlign="left">
+            <FallInPlace delay={0.4}>
+              <Text
+                // Use responsive font sizes for the description text
+                fontSize={['sm', 'md', 'lg']}
+                fontWeight="medium"
+              >
                 DialDynamics is a <Em>cold-calling platform</Em>
                 <Br /> that doesn&apos;t get in your way and helps you <Br />
                 call smarter and close deals with confidence.
               </Text>
             </FallInPlace>
           }
-          >
+        >
           <FallInPlace delay={0.8}>
-            <ButtonGroup
-              spacing={4}
-              alignItems="center"
-              pt="2"
-              flexDirection="row" // Ensures buttons are side by side
-            >
+            <ButtonGroup spacing={4} alignItems="center" pt="2">
               <ButtonLink
                 colorScheme="primary"
-                size="lg"
+                // Use a slightly smaller button size on mobile
+                size={{ base: 'md', md: 'lg' }}
                 href="https://calendly.com/abdulsamad-aurrin/30min"
               >
                 Book a Demo
               </ButtonLink>
               <ButtonLink
-                size="lg"
+                size={{ base: 'md', md: 'lg' }}
                 href="https://dialdynamics.vercel.app"
                 variant="outline"
                 rightIcon={
@@ -147,7 +150,7 @@ const HeroSection: React.FC = () => {
               </ButtonLink>
             </ButtonGroup>
           </FallInPlace>
-          </Hero>
+        </Hero>
 
           {/* Responsive Image */}
           <Box
@@ -270,7 +273,6 @@ const HighlightsSection = () => {
             'Cold call tracking',
             'Realistic AI responses',
             'Call scoring system',
-            'Live coaching mode',
           ].map((value) => (
             <Tag
               key={value}
@@ -417,7 +419,7 @@ const TestimonialsSection = () => {
 const PricingSection = () => {
   return (
     <Pricing {...pricing}>
-      <Text p="8" textAlign="center" color="muted">
+      <Text pt="8" textAlign="center" color="muted">
         GST may be applicable depending on your location.
       </Text>
     </Pricing>
