@@ -432,7 +432,7 @@ const FaqSection = () => {
 
 const ContactUs = () => {
   return (
-    <Flex justify="center" align="center" py={2}>
+    <Flex justify="right" align="center">
       <Box width="100%" maxW="600px">
         <iframe
           data-tally-src="https://tally.so/embed/nWj19v?transparentBackground=1&dynamicHeight=1"
